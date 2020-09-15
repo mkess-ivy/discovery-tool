@@ -26,7 +26,7 @@
                 <div class="prev page_btn">
                     <router-link to="/work-efficiency">Previous</router-link>
                 </div>
-                <div class="next page_btn">
+                <div class="home page_btn">
                     <router-link to="/">Home</router-link>
                 </div>
                 </div>

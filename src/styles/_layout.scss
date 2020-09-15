@@ -37,6 +37,24 @@ li {
 .wrapper {
     color: $white;
     padding: 150px 25px 75px;
+
+    @include small {
+        display:none;
+    }
+}
+.screen-msg {
+    display: none;
+
+    @include small {
+        display: block;
+        color: white;
+        padding: 50vh 0;
+        height: 100vh;
+        text-align: center;
+        width: 50%;
+        margin: auto;
+        font-size: 20px;
+    }
 }
 .pagination_wrapper {
     width: 100%;
@@ -65,6 +83,16 @@ li {
         }
     }
 }
+.summary {
+    a {
+        color: $green;
+    }
+}
+.home {
+    a {
+        color: $brown;
+    }
+}
 
 .intro-wrapper {
     color: $white;
@@ -83,6 +111,8 @@ li {
 .intro-description {
     font-size: 18px;
     line-height:1.4;
+    width:90%;
+    margin: auto;
 }
 
 .offer-wrapper {
@@ -130,6 +160,15 @@ li {
         width: 100px;
         // background: white;
         height:2px;
+
+        
+    }
+    &:last-child {
+        margin-bottom:0;
+
+        &::after {
+            display: none;
+        }
     }
 }
 
@@ -141,7 +180,8 @@ li {
     }
 }
 
-.nextstepsoffer {
+.nextstepsoffer,
+.select-response {
     font-weight:lighter;
     font-size:28px;
     padding-bottom:15px;
@@ -152,6 +192,8 @@ li {
 .nextsteps-desc {
     font-size: 14px;
     padding-bottom:50px;
+    width:90%;
+    margin:auto;
 }
 
 .schedule {
@@ -167,4 +209,33 @@ li {
             text-decoration: none;
         }
     }
+}
+
+.last {
+    color: $white;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.selection {
+    padding-bottom:50px;
+    .select-title {
+        font-weight:bold;
+        text-transform:uppercase;
+        padding-bottom:7px;
+    }
+}
+.about {
+    padding-bottom:75px;
+}
+.about-list {
+    
+    li {
+        font-weight: lighter;
+        font-size: 22px;
+    }
+}
+.services {
+    padding-bottom:25px;
 }

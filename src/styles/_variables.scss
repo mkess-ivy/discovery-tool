@@ -1,5 +1,17 @@
 $white:  #fff;
 $black: #000;
 $brown: #a16414;
+$green: #2DA368;
 
 $primary-font: 'Montserrat',sans-serif;
+
+// Media Query Sizes
+$on-small               : 412px;
+
+
+// Media Query Mixins
+@mixin small {
+  @media screen and (min-width: #{$on-small}) {
+    @content;
+  }
+}

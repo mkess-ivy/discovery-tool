@@ -4,6 +4,7 @@
       <router-link to="/"><img class="svncrwns-logo" src="./assets/svncrwns-logo.png"  /></router-link>
       <div class="business">management</div>
     </div>
+    <div class="screen-msg">Please view this on a mobile device with screen size of 414px or smaller</div>
     <router-view/>
   </div>
 </template>

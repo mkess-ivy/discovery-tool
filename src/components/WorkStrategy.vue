@@ -57,7 +57,7 @@
             <div class="prev page_btn">
                 <router-link to="/tracks">Previous</router-link>
             </div>
-            <div class="next page_btn">
+            <div class="summary page_btn">
                 <router-link to="/summary-strategy">Summary</router-link>
             </div>
             </div>

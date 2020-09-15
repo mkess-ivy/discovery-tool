@@ -89,13 +89,17 @@
                     </div>
                 </div>
             </div>
+            <!-- <div class="last">
+                Follow allong to view the summary.
+            </div> -->
         </div>
+        
         <div class="pagination_wrapper">
             <div class="frow justify-between">
             <div class="prev page_btn">
                 <router-link to="/tracks">Previous</router-link>
             </div>
-            <div class="next page_btn">
+            <div class="summary page_btn">
                 <router-link to="/summary-identity">Summary</router-link>
             </div>
             </div>
