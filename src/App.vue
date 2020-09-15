@@ -1,19 +1,21 @@
 <template>
-  <div id="nav">
-    <img alt="Vue logo" src="@/assets/svncrwns-logo.png" />
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div id="app">
+    <div id="nav">
+      <router-link to="/"><img class="svncrwns-logo" src="./assets/svncrwns-logo.png"  /></router-link>
+      <div class="business">management</div>
+    </div>
+    <router-view/>
   </div>
-  <router-view />
 </template>
 
 <style lang="scss">
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  // font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: $primary-font;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  // color: #2c3e50;
 }
 
 #nav {
@@ -27,5 +29,19 @@
       color: #42b983;
     }
   }
+}
+
+.svncrwns-logo {
+  width: 75%;
+  margin:0 auto;
+}
+
+.business {
+  letter-spacing:7px;
+  text-transform: uppercase;
+  font-size:14px;
+  text-align:center;
+  font-weight:bold;
+  color: $white;
 }
 </style>

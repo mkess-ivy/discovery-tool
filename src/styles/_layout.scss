@@ -1,0 +1,68 @@
+body {
+    margin: 0;
+    background: #000;
+}
+
+.brand-button {
+    background: $white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 13px;
+    text-transform: uppercase;
+
+   a {
+       color: $black;
+
+       &:hover {
+           color: $brown;
+       }
+   }
+    
+
+    &.intro {
+        margin-top:50px;
+    }
+}
+
+.wrapper {
+    color: $white;
+    padding: 15px 25px;
+}
+.pagination_wrapper {
+    width:100%;
+    padding: 15px;
+}
+.page_btn {
+    width: 90px;
+
+    a {
+        color: $white;
+        display: inline-block;
+        border: 1px solid;
+        padding: 7px 15px;
+        font-size:13px;
+        border-radius: 50px;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+
+.intro-wrapper {
+    color: $white;
+    padding: 125px 25px;
+}
+.intro-title {
+    color: $brown;
+    text-transform: uppercase;
+    font-size:16px;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+.intro-description {
+    font-size: 18px;
+    line-height:1.4;
+}
