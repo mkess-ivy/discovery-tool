@@ -2,6 +2,13 @@ body {
     margin: 0;
     background: #000;
 }
+ul {
+    padding-inline-start: 0;
+    margin:0;
+}
+li {
+    list-style: none;
+}
 
 .brand-button {
     background: $white;
@@ -11,6 +18,7 @@ body {
     font-weight: bold;
     font-size: 13px;
     text-transform: uppercase;
+    margin-top:25px;
 
    a {
        color: $black;
@@ -28,11 +36,16 @@ body {
 
 .wrapper {
     color: $white;
-    padding: 15px 25px;
+    padding: 150px 25px 75px;
 }
 .pagination_wrapper {
-    width:100%;
-    padding: 15px;
+    width: 100%;
+    padding: 15px 20px 20px 20px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    /* right: 20px; */
+    background: black;
 }
 .page_btn {
     width: 90px;
@@ -40,10 +53,12 @@ body {
     a {
         color: $white;
         display: inline-block;
-        border: 1px solid;
+        // border: 1px solid;
+        text-transform: uppercase;
+        font-weight: bold;
         padding: 7px 15px;
         font-size:13px;
-        border-radius: 50px;
+        // border-radius: 50px;
 
         &:hover {
             text-decoration: none;
@@ -55,14 +70,101 @@ body {
     color: $white;
     padding: 125px 25px;
 }
+.intro {
+    padding-top:100px;
+}
 .intro-title {
     color: $brown;
     text-transform: uppercase;
     font-size:16px;
     font-weight: bold;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
 }
 .intro-description {
     font-size: 18px;
     line-height:1.4;
+}
+
+.offer-wrapper {
+    padding-top: 30px;
+}
+.highlight-wrapper {
+    padding-top:20px;
+}
+.highlight {
+    // padding-top:50px;
+    margin-bottom:50px;
+
+    .highlight-title {
+        font-size: 36px;
+        padding-bottom:20px;
+        font-weight: lighter;
+    }
+    .highlight-desc {
+        font-size:14px;
+    }
+    .highlight-list {
+        padding: 30px 0;
+        li {
+            font-size:20px;
+            padding-bottom: 15px;
+            width:80%;
+            margin:auto;
+        }
+    }
+    .highlight-details {
+        .highlight-details-title {
+            font-weight: bold;
+            text-transform:uppercase;
+            font-size:14px;
+        }
+        .details-list {
+            padding-top: 10px;
+            padding-bottom:50px;
+
+        }
+    }
+
+    &::after {
+        content: "\2666";
+        width: 100px;
+        // background: white;
+        height:2px;
+    }
+}
+
+.offer-list {
+    li {
+        font-weight:lighter;
+        font-size:28px;
+        padding-bottom:15px;
+    }
+}
+
+.nextstepsoffer {
+    font-weight:lighter;
+    font-size:28px;
+    padding-bottom:15px;
+}
+.nextsteps-wrapper {
+    padding-top:50px;
+}
+.nextsteps-desc {
+    font-size: 14px;
+    padding-bottom:50px;
+}
+
+.schedule {
+    padding-bottom:25px;
+    a {
+        color: $brown;
+        font-size: 26px;
+        border-bottom: 1px solid;
+        padding-bottom:3px;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
 }

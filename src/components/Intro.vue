@@ -1,15 +1,17 @@
 <template>
 <div class="frow centered-column">
-  <div class="intro-wrapper">
-    <div class="intro-title">
-        work with us
-    </div>
-    <div class="intro-description">
-        <p>SVNCRWNS is a management company + studio.  We work with artists + brands to connect with audiences, get organized and ready to scale their operation.  Complete our form below to see our recommended services.</p>
+  <div class="wrapper">
+      <div class="intro">
+        <div class="intro-title">
+            work with us
+        </div>
+        <div class="intro-description">
+            <p>SVNCRWNS is a management company + studio.  We work with artists + brands to connect with audiences, get organized and ready to scale their operation.  Complete our form below to see our recommended services.</p>
 
-        <p>Let’s schedule our complimentary strategy session to learn about your goals and opportunities.</p>
+            <p>Let’s schedule our complimentary strategy session to learn about your goals and opportunities.</p>
+        </div>
     </div>
-    <div class="intro brand-button">
+    <div class="brand-button">
         <router-link to="/get-started">Get Started</router-link>
     </div>
   </div>

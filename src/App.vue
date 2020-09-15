@@ -20,6 +20,9 @@
 
 #nav {
   padding: 30px;
+  position: fixed;
+  top:0;
+  background: $black;
 
   a {
     font-weight: bold;

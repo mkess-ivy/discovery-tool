@@ -15,6 +15,14 @@
                     <li><router-link to="/work-mgmt">Management</router-link></li>
                 </ul>
             </div>
+            <div class="pagination_wrapper">
+                <div class="frow justify-between">
+                <div class="prev page_btn">
+                    <router-link to="/get-started">Previous</router-link>
+                </div>
+                
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -30,7 +38,7 @@ export default {
 </script>
 <style lang="scss">
     .work-wrapper {
-        padding: 50px 0;
+        padding: 50px 0 0;
 
         .work-list {
             list-style: none;

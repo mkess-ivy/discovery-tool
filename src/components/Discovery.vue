@@ -80,10 +80,10 @@ export default {
 
 
 .data-collection {
-    margin-top:20px;
+    // margin-top:20px;
 }
 .group {
-    padding:20px 0;
+    padding:0 0 25px;
 }
 .group-question  {
     font-size:20px;

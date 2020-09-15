@@ -1,5 +1,5 @@
 <template>
-  <div class="discovery-wrapper">
+  <div>
     
     <Discovery />
    
