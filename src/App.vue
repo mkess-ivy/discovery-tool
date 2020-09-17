@@ -5,13 +5,22 @@
       <div class="business">management</div>
     </div>
     <div class="screen-msg">Please view this on a mobile device with screen size of 414px or smaller</div>
-    <router-view/>
+    <DiscoveryForm />
   </div>
 </template>
+<script>
+  import DiscoveryForm from './components/DiscoveryForm'
+  
+  export default {
+    name: 'App',
+    components: {
+      DiscoveryForm
+    }
+  }
+</script>
 
 <style lang="scss">
 #app {
-  // font-family: Avenir, Helvetica, Arial, sans-serif;
   font-family: $primary-font;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

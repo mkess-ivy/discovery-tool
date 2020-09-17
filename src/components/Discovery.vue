@@ -63,25 +63,13 @@ export default {
            question_systems: '',
            question_website: ''
        }
-   },
-    methods: {
-        prevStep: function() {
-            this.step--;
-        },
-        nextStep: function() {
-            this.step++;
-        }
-    }
+   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 
-
-.data-collection {
-    // margin-top:20px;
-}
 .group {
     padding:0 0 25px;
 }
