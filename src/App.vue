@@ -20,11 +20,14 @@
 </script>
 
 <style lang="scss">
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;800&display=swap');
+
+
 #app {
   font-family: $primary-font;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  // text-align: center;
   // color: #2c3e50;
 }
 
@@ -33,6 +36,9 @@
   position: fixed;
   top:0;
   background: $black;
+  text-align:center;
+  width:100%;
+  z-index: 1;
 
   a {
     font-weight: bold;
@@ -45,14 +51,14 @@
 }
 
 .svncrwns-logo {
-  width: 75%;
+  width: 50%;
   margin:0 auto;
 }
 
 .business {
   letter-spacing:7px;
   text-transform: uppercase;
-  font-size:14px;
+  font-size:11px;
   text-align:center;
   font-weight:bold;
   color: $white;

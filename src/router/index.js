@@ -14,86 +14,44 @@ const routes = [
   {
     path: '/get-started',
     name: 'GetStarted',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "GetStarted" */ '../views/GetStarted.vue')
+    component: () => import('../views/GetStarted.vue')
   },
   {
     path: '/tracks',
-   
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "Tracks" */ '../views/Tracks.vue')
+    component: () => import('../views/Tracks.vue')
   },
   {
     path: '/work-identity',
-   
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "Identity" */ '../views/Identity.vue')
+    component: () => import( '../views/Identity.vue')
   },
   {
     path: '/work-efficiency',
-   
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "Efficiency" */ '../views/Efficiency.vue')
+    component: () => import('../views/Efficiency.vue')
   },
   {
     path: '/work-strategy',
-   
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "Strategy" */ '../views/Strategy.vue')
+    component: () => import( '../views/Strategy.vue')
   },
   {
     path: '/work-mgmt',
-   
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "Management" */ '../views/Management.vue')
+    component: () => import( '../views/Management.vue')
   },
   {
     path: '/summary-identity',
-   
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "SummaryIdentity" */ '../views/SummaryIdentity.vue')
+    component: () => import( '../views/SummaryIdentity.vue')
   },
   {
     path: '/summary-efficiency',
-   
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "SummaryEfficiency" */ '../views/SummaryEfficiency.vue')
+    component: () => import( '../views/SummaryEfficiency.vue')
   },
   {
     path: '/summary-strategy',
-   
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "SummaryStrategy" */ '../views/SummaryStrategy.vue')
+    component: () => import( '../views/SummaryStrategy.vue')
   },
   {
     path: '/summary-mgmt',
-   
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "SummaryMgmt" */ '../views/SummaryMgmt.vue')
+    component: () => import('../views/SummaryMgmt.vue')
   }
-
-
-  
 ]
 
 const router = new VueRouter({
@@ -102,4 +60,4 @@ const router = new VueRouter({
   routes
 })
 
-export default router 
+export default router

@@ -1,5 +1,5 @@
 <template>
-    <div class="discovery_form_wrapper">
+    <div class="discovery_form_wrapper" @submit.prevent="sendEmail">
         <section v-if="step == 1" class="discovery_intro">
             <div class="discovery_title">Work With Us</div>
             <div class="discovery_text">
@@ -10,7 +10,7 @@
         </section>
         
         <section v-if="step == 2" class="form_values">
-            <div class="form_header">Welcome</div>
+            <div class="form_header">Welcome!</div>
             <div class="form_details">
                 <div class="group">
                     <div class="form_question">What's your name?</div>
@@ -18,7 +18,7 @@
                         v-model="client_name"
                         type="text" 
                         placeholder="Your Name" 
-                        class="form-control form-control-lg" >
+                        class="form-control form-control-lg" required>
                 </div>
                 <div class="group">
                     <div class="form_question">Are you an artist or business?</div>
@@ -56,9 +56,11 @@
         </section>
 
         <section v-if="step == 3" class="service_types">
-            <div class="discovery_title">How Can We Help?</div>
-            <div class="discovery_text">
-                <p>We offer 4 different types of services. What aspect of your business would you like to begin with?</p>
+            <div class="discovery_intro">
+                <div class="discovery_title">How It Works</div>
+                <div class="discovery_text">
+                    <p>We offer 4 different types of services. What aspect of your business would you like to begin with?</p>
+                </div>
             </div>
             <div class="service_wrapper">
                 <div class="service_item">
@@ -66,32 +68,32 @@
                     name="radio" 
                     id="one" 
                     value="Strategy" 
-                    v-model="service">
-                    <label for="one">Strategy</label>
+                    v-model="service" required />
+                    <label for="one" class="service_name">Strategy</label>
                 </div>
                 <div class="service_item">
                     <input type="radio" 
                     name="radio" 
                     id="two" 
                     value="Identity" 
-                    v-model="service">
-                    <label for="two">Identity</label>
+                    v-model="service" />
+                    <label for="two" class="service_name">Identity</label>
                 </div>
                 <div class="service_item">
                     <input type="radio" 
                     name="radio" 
                     id="three" 
                     value="Organization" 
-                    v-model="service">
-                    <label for="three">Organization</label>
+                    v-model="service" />
+                    <label for="three" class="service_name">Organization</label>
                 </div>
                 <div class="service_item">
                     <input type="radio" 
                     name="radio" 
                     id="four" 
                     value="Management" 
-                    v-model="service">
-                    <label for="four">Management</label>
+                    v-model="service" />
+                    <label for="four" class="service_name">Management</label>
                 </div>
             </div> 
         </section>
@@ -100,7 +102,7 @@
             
             <div v-if="service == category[0].name">
                 <div class="discovery_intro">
-                    <div class="discovery_title">{{ category[0].name }}</div>
+                    <div class="discovery_title alt_color">{{ category[0].name }}</div>
                     <div class="discovery_text">
                         {{ category[0].description }}
                     </div>
@@ -110,14 +112,16 @@
                     
                     <div v-for="item in category[0].offer"  :key="item" class="offer_item" >
                         <div class="offer_item_wrapper">
-                            <div class="offer_number">{{ item.id }}</div> 
-                            <div class="offer_highlight">{{ item.name }}</div>
+                            <div class="frow justify-start">
+                                <div class="offer_number">{{ item.id }}</div> 
+                                <div class="offer_highlight">{{ item.name }}</div>
+                            </div>
                         </div>
                         <div class="offer_description">
                             {{ item.description }}
                         </div>
                         <div class="offer_includes">
-                            <div class="includes_title">Includes the following:</div>
+                            <div class="offer_header">Includes the following:</div>
                             <ul class="includes_list">
                                 <li v-for="asset in category[0].offer.assets" :key="asset">
                                     {{ asset.name }}
@@ -125,6 +129,7 @@
                             </ul>
                         </div>
                         <div class="offer_details">
+                            <div class="offer_header">Details:</div>
                             <ul class="includes_list">
                                 <li>{{ item.timeline }}</li>
                                 <li>{{ item.cost }}</li>
@@ -138,8 +143,8 @@
                     </div>
                     <div class="whats_next_group">
                         <div class="group">
-                            <div class="form_question">Would you like to learn more about any of these services?</div>
-                            <select v-model="learn_more_strategy">
+                            <div class="whatsnext_text">Would you like to learn more about any of these services?</div>
+                            <select v-model="learn_more">
                                 <option disabled value="">Choose One</option>
                                 <option v-for="entry in category[0].interests" :key="entry">{{ entry.name }}</option>
                             </select>
@@ -188,7 +193,7 @@
                     <div class="whats_next_group">
                         <div class="group">
                             <div class="form_question">Would you like to learn more about any of these services?</div>
-                            <select v-model="learn_more_identity">
+                            <select v-model="learn_more">
                                 <option disabled value="">Choose One</option>
                                 <option v-for="entry in category[1].interests" :key="entry">{{ entry.name }}</option>
                             </select>
@@ -237,7 +242,7 @@
                     <div class="whats_next_group">
                         <div class="group">
                             <div class="form_question">Would you like to learn more about any of these services?</div>
-                            <select v-model="learn_more_identity">
+                            <select v-model="learn_more">
                                 <option disabled value="">Choose One</option>
                                 <option v-for="entry in category[2].interests" :key="entry">{{ entry.name }}</option>
                             </select>
@@ -286,7 +291,7 @@
                     <div class="whats_next_group">
                         <div class="group">
                             <div class="form_question">Would you like to learn more about any of these services?</div>
-                            <select v-model="learn_more_identity">
+                            <select v-model="learn_more">
                                 <option disabled value="">Choose One</option>
                                 <option v-for="entry in category[3].interests" :key="entry">{{ entry.name }}</option>
                             </select>
@@ -297,9 +302,9 @@
         </section>
 
         <section v-if="step == 5" class="summary">
-            <div class="form_header">The Results are in, {{ client_name }}!</div>
+            <div class="form_header">{{ client_name }}, the results are in!</div>
             <div class="your_selection">
-                <div class="offer_title">
+                <div class="summary_header">
                     You Selected
                 </div>
                 <div class="your_selection_title">
@@ -311,7 +316,7 @@
                     <li>You are {{ biz_type }}</li>
                     <li>{{marketing}}</li>
                     <li>{{ website }}</li>
-                    <li>{{ management }}</li>
+                    <li>{{ systems }}</li>
                 </ul>
             </div>
 
@@ -327,21 +332,30 @@
                 <div class="recommended">
                     <div class="offer_title">- Recommended</div>
 
-                    <ul class="">
-                        <li><span>1</span>{{ strategy.select_one }}</li>
-                        <li><span>2</span>{{ strategy.select_two }}</li>
+                    <ul class="" v-if="service ==  category[0].name">
+                        <li v-for="item in category[0].offer" :key="item"><span></span>{{ item.name }}</li>
+                    </ul>
+                    <ul class="" v-if="service ==  category[1].name">
+                        <li v-for="item in category[1].offer" :key="item"><span></span>{{ item.name }}</li>
+                    </ul>
+                    <ul class="" v-if="service ==  category[2].name">
+                        <li v-for="item in category[2].offer" :key="item"><span></span>{{ item.name }}</li>
+                    </ul>
+                    <ul class="" v-if="service ==  category[3].name">
+                        <li v-for="item in category[3].offer" :key="item"><span></span>{{ item.name }}</li>
                     </ul>
                 </div>
                 <div class="interested">
                     <div class="offer_title">- Interested</div>
-                    <div class="">You are interested in {{ learn_more_strategy }}</div>
+                    <div class="">You are interested in {{ learn_more }}</div>
                 </div>
                 <div class="next_wrapper">
-                    <div class="next_title">Next Steps</div>
+                    <div class="your_selection_title next_steps">Next Steps</div>
                     <div class="offer_description">We have a complimentary session available to learn about your goals + opportunities</div>
-                    <a class="" href="">
+                    <a class="schedule" href="https://www.calendly.com/svncrwns/svncrwns-sessions">
                         <div>Schedule w/ Us</div>
                     </a>
+                    <input type="submit" value="Send">
                 </div>
                 
             </div>
@@ -350,28 +364,35 @@
         </section>
 
         <div class="button_wrapper">
-            <div class="frow justify-start">
+            <div class="frow justify-between">
+                
                 <button 
                 v-if="step != 1"
                 @click.prevent="prevStep"
-                class="prev_button">Previous Step</button>
+                class="prev_button button">
+                    <i class="fa fa-chevron-left fa-lg" aria-hidden="true"></i>
+                </button>
+
+                <button 
+                v-if="step != 1"
+                @click="reset"
+                class="home_button button">
+                    <i class="fa fa-home fa-lg" aria-hidden="true"></i>
+                </button>
 
                 <button 
                 v-if="step != totalsteps"
                 @click.prevent="nextStep"
-                class="next_button">Next Step</button>
+                class="next_button button">
+                    <i class="fa fa-chevron-right fa-lg" aria-hidden="true"></i>
+                </button>
 
-                <button 
-                v-if="service == Strategy"
-                @click.prevent="strategyStep"
-                class="next_button">View Strategy</button>
-
-            </div>
-            
+            </div>            
         </div>
     </div>
 </template>
 <script>
+    import emailjs from 'emailjs-com';
     export default {
         name: 'DiscoveryForm',
         data() {
@@ -384,14 +405,13 @@
                 website:'',
                 systems:'',
                 service:'',
-                learn_more_strategy:'',
-                learn_more_identity: '',
+                learn_more: '',
                 
                 category: [
                     {
                         id:1,
                         name: "Strategy",
-                        description: "How do you feel about your business planning and decision making?We provide consulting that helps us learn about your specific needs.  We promote collaboration + expansion.  Always global, never local.",
+                        description: "How do you feel about your business planning and decision making?  We provide consulting that helps us learn about your specific needs.  We promote collaboration + expansion.  Always global, never local.",
                         
                         interests: [
                             { name: "Research + Insights"},
@@ -577,16 +597,195 @@
             },
             nextStep: function() {
                 this.step++;
-            }
+            },
+            reset () {
+                Object.assign(this.$data, this.$options.data.call(this));
+            },
+            sendEmail: (e) => {
+                emailjs.sendForm('service_n042zjm', 'template_cn6f4ds', e.target, 'user_Q61b2QLSOrb0euWHtn30T')
+                    .then((result) => {
+                        console.log('SUCCESS!', result.status, result.text);
+                    }, (error) => {
+                        console.log('FAILED...', error);
+                    });
+                }
         }
     }
 </script>
+
 <style lang="scss">
     @import "../styles/layout.scss";
     @import "../styles/variables.scss";
 
     .discovery_form_wrapper {
-        padding:125px 50px;
+        padding:120px 30px 75px;
         color:$white;
+        position: relative;
+    }
+    .button_wrapper {
+        width:100%;
+        height: 70px;
+        position:fixed;
+        bottom:0;
+        left:0;
+        background:$black;
+
+        .button {
+            width:33.3%;
+            border:0;
+            padding:30px 0;
+            border-radius:0;
+            background:none;
+        }
+        .next_button {  
+            position: fixed;
+            bottom:0;
+            right: 0;
+        }
+        .home_button {
+            left:33.3%;
+            position:fixed;
+            bottom:0;
+        }
+        .prev_button {
+            left:0;
+            position:fixed;
+            bottom:0;
+        }
+    }
+    .discovery_intro {
+        width:90%;
+        padding-top: 50px;
+
+        .discovery_title {
+            font-size:36px;
+            width:200px;
+            text-transform:uppercase;
+            line-height: 36px;
+            font-weight:800;
+            padding:0 0 25px;
+
+            &.alt_color {
+                color: $brown;
+            }
+        }
+    }
+    .discovery_text,
+    .offer_description,
+    .whatsnext_text {
+        font-size: 14px;
+    }
+    // Form Values Section
+    .form_header {
+        font-size:36px;
+        font-weight:lighter;
+        padding-bottom: 25px;
+    }
+    .group {
+        padding-bottom:40px; 
+    }
+    .form_question,
+    .offer_title,
+    .offer_header {
+        font-weight:bold;
+        text-transform:uppercase;
+        padding-bottom: 5px;
+        font-size: 14px;
+    }
+    // Service Types Section
+    .service_wrapper {
+        padding-top:40px;
+
+        .service_name {
+            width:80%;
+            display: inline-block;
+            font-size: 24px;
+            padding-left:20px;
+            color: $white;
+            font-weight: lighter;
+        }
+        .service_item input {
+            display: inline-block;
+            color:white;
+        }
+        input[type="radio"] {
+            border-color:$white;
+        }
+    }
+
+    // Service Template
+    .offer_title {
+        padding:50px 0 25px;
+    }
+    .offer_number {
+        border:1px solid;
+        border-radius:20px;
+        padding:4px;
+        text-align:center;
+        width: 35px;
+        display: inline-block;
+    }
+    .offer_item_wrapper {
+        padding-bottom: 20px;
+    }
+    .offer_item {
+        padding-bottom: 50px;
+    }
+    .offer_highlight {
+        padding-left: 20px;
+        font-size: 22px;
+    }
+    .offer_description {
+        padding-bottom:30px;
+        padding-right:20px;
+    }
+    .offer {
+        border-bottom:1px solid;
+    }
+    .whatsnext_text {
+        padding-bottom: 15px;
+    }
+    
+    // Summary
+    .your_selection_title  {
+        text-transform: uppercase;
+        color: $brown;
+        font-weight: bold;
+        font-size: 30px;
+        padding-bottom: 30px;
+
+       
+    }
+    .summary_header {
+        font-weight: 800;
+        text-transform: uppercase;
+    }
+    .interested {
+        padding-bottom: 50px;
+        border-bottom:1px solid;
+    }
+    .next_wrapper {
+        padding-top:50px;
+        padding-bottom: 75px;
+        text-align:center;
+    }
+    .schedule div {
+        font-size: 36px;
+        border-bottom: 1px solid;
+        width: 90%;
+        margin: auto;
+        color: $brown;
+    }
+
+
+    //  Misc
+    input {
+        border-bottom:0;
+        font-size: 18px;
+        color:$white;
+    }
+    select {
+        color:$white;
+        font-size:18px;
     }
 </style>
